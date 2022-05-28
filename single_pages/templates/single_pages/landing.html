@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Landing</title>
-</head>
-<body>
-    <nav>
-        <a href="/blog/">Blog</a>
-        <a href="/about_me">About me</a>
-    </nav>
-    <h1>Landing</h1>
-    <h2>달타냥</h2>
-</body>
-</html>
+{% extends 'blog/base_full_width.html' %}
+
+
+{% block head_title %} Home {% endblock %}
+
+{% block main_area %}
+    <h1>Hello</h1>
+    <h2>:D</h2>
+    <p>It's landing page</p>
+    <hr>
+
+{% endblock %}

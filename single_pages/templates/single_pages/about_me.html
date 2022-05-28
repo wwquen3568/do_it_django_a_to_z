@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About me</title>
-</head>
-<body>
-    <nav>
-        <a href="/blog/">Blog</a>
-        <a href="/about_me">About me</a>
-    </nav>
-    <h1>About_ME</h1>
-    <h2>달타냥</h2>
-</body>
-</html>
+{% extends 'blog/base_full_width.html' %}
+
+
+{% block head_title %} About Me {% endblock %}
+
+{% block main_area %}
+    <h1>About Me</h1>
+    <h3>VeryDisco</h3>
+    <p>상세 자기소개</p>
+    <hr>
+
+{% endblock %}
