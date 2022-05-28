@@ -1,5 +1,10 @@
 {% extends 'blog/base.html' %}
 
+{% block head_title %}
+    {{ post.title }} - Blog
+{% endblock %}
+
+
 {% block main_area %}
 <!-- Post content-->
                     <article>
@@ -9,11 +14,11 @@
                             <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
 
                             {% if post.hook_text %}
-                                <h4 disabled> {{ post.hook_text }}</h4>
+                                <h4> {{ post.hook_text }}</h4>
                             {% endif %}
 
                             <!-- Author -->
-                            <a href="#">작가명</a>
+                            <a href="#">{{ post.author | upper }}</a>
                             <!-- Post meta content-->
                             <div class="text-muted fst-italic mb-2">{{ post.created_at }}</div>
 
