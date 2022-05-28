@@ -16,17 +16,32 @@
                             <a href="#">작가명</a>
                             <!-- Post meta content-->
                             <div class="text-muted fst-italic mb-2">{{ post.created_at }}</div>
+
+                            {% if post.category %}
+                                <span class="badge badge-secondary float-right">{{ post.category }}</span>
+                            {% else %}
+                                <span class="badge badge-secondary float-right">미분류</span>
+                            {% endif %}
+
                             <hr>
-                            <!-- Post categories-->
-                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
-                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
                         </header>
+
                         <!-- Preview image figure-->
                         {% if p.head_image %}
                             <a href="#!"><img class="card-img-top" src="{{ p.head_image.url }}" alt="..." /></a>
                         {% else %}
                             <a href="#!"><img class="card-img-top" src="https://picsum.photos/seed/{{ post.pk }}/800/600" alt="..." /></a>
                         {% endif %}
+
+                        {% if p.tags.exists %}
+                            <i class="fa-solid fa-tags"></i>
+                            {% for tag in p.tags.iterator %}
+                                <a href="{{ tag.get_absolute_url }}"><span class="badge badge-pill badge-light">{{ tag }}</span></a>
+                            {% endfor %}
+                            <br>
+                            <br>
+                        {% endif %}
+
                         <!-- Post content-->
                         <section class="mb-5">
                             <p class="fs-5 mb-4">{{ post.content }}</p>
